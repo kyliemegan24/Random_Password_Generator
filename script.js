@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 var charPool = [];
@@ -6,6 +5,7 @@ var upperA = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', '
 var lowerA = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numbA = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialA = ['!', '@', '#', '$', '%', '&', '*', '?'];
+
 var characterSelect = prompt("How many characters do you need your password to be?");
 
     
@@ -50,12 +50,16 @@ while (uppercase === false && lowercase === false && number === false && special
 
 function generatePassword() {
     var together = [];
+
     for (var i = 0; i < characterSelect; i++) {
-        var result = [Math.floor(Math.random() * charPool.length)];
+        var result = Math.floor(Math.random() * charPool.length);
         console.log(result);
-        together.push(String.fromCharCode(result));
-        }
-    return together.join('');
+        together.push(charPool[result]);
+        console.log(together); 
+    }
+    
+    return together.join('');  
+    
 }
 
 
